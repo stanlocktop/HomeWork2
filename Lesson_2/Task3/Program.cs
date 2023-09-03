@@ -1,21 +1,32 @@
 ﻿namespace Distance
 {
-    //Дана відстань у сантиметрах.Знайти кількість повних метрів у ньому.
-    //566 см => 5 м
+    //3) Дано тризначне число.Знайти число, отримане під час перестановки першої та другої цифр заданого числа.
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            int dist;
-            int initDist;
-            Console.WriteLine("Enter distance:");
-            string input = Console.ReadLine();
-            dist = int.Parse(input); // or INT32.Parse(input)
-            initDist = dist;
-            dist /= 100; // == dist = dist /100;  // int input 
+            Console.OutputEncoding = System.Text.Encoding.Unicode;
+            Console.Write("Введіть трьохзначне число: ");
+            int num = int.Parse(Console.ReadLine());
 
-            Console.WriteLine($"Distanse is equal {dist}, initial distance is {initDist}");
-            Console.WriteLine("Distanse is equal {0}, initial distance is {1}", dist, initDist);
+            if (num >= 100 && num <= 999)
+            {
+                // Отримати останню цифру
+                int lastNum = num % 10;
+
+                // Отримати другу цифру
+                int secondNum = (num / 10) % 10;
+
+                // Отримати першу цифру
+                int firstNum = (num / 100) % 10;
+
+                // Перестановка перших двох цифр
+                int newNum = lastNum * 100 + secondNum * 10 + firstNum;
+
+                Console.WriteLine("Число з перестановкою перших двох цифр: " + newNum);
+                Console.ReadKey();
+            }
         }
     }
 }
+    
