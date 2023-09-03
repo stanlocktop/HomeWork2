@@ -13,7 +13,6 @@
             Console.WriteLine("До обміну:");
             Console.WriteLine("Перше число: " + number1);
             Console.WriteLine("Друге число: " + number2);
-
             number1 = number1 + number2;
             number2 = number1 - number2;
             number1 = number1 - number2;
