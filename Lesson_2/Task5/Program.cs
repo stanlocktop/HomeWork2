@@ -6,19 +6,17 @@
         static void Main(string[] args)
         {
             Console.OutputEncoding = System.Text.Encoding.Unicode;
-            Console.Write("Введіть перше число: ");
-            int number1 = int.Parse(Console.ReadLine());
-            Console.Write("Введіть друге число: ");
-            int number2 = int.Parse(Console.ReadLine());
-            Console.WriteLine("До обміну:");
-            Console.WriteLine("Перше число: " + number1);
-            Console.WriteLine("Друге число: " + number2);
-            number1 = number1 + number2;
-            number2 = number1 - number2;
-            number1 = number1 - number2;
-            Console.WriteLine("Результат:");
-            Console.WriteLine("Перше число: " + number1);
-            Console.WriteLine("Друге число: " + number2);
+            Console.WriteLine("Введіть перше число:");
+            int a = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Введіть друге число:");
+            int b = Convert.ToInt32(Console.ReadLine());
+
+            a = a * b;
+            b = a / b;
+            a = a / b;
+
+            Console.WriteLine("Значення першої змінної після обміну: " + a);
+            Console.WriteLine("Значення другої змінної після обміну: " + b);
             Console.ReadKey();
         }
     }
